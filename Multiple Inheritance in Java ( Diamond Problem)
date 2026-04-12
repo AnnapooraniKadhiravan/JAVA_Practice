@@ -1,0 +1,39 @@
+In Java, Multiple inheritance is achieved through interfaces
+Why ?
+# Multiple Inheritance is nothing but inheriting 2 parents to single child (2 base class, 1 sub class)
+# usually in multiple inheritance, above the base classes, object class will be there which acts as base class for other 2 classes 
+# consider it as A class and B class is base class for C class and Object class is base class for A & B
+# so when A and B inherits the properties of object class, then c class inherites the properties of A & B class but cannot inherit the properties of Object class
+# this creates an ambiguity for C class without inherting the properties of Object class
+# To avoid such cases, Java introduced Interfaces which does not inherit or connect with any object class
+# so class C implements A, B (A & B are interfaces here) and C can inherit the properties of A & B without any ambiguity.
+
+                             -------------------
+                             |   class Object  |     (Ambiguity is caused because of Object class acts as base class for A & B)
+                             -------------------
+                                /           \
+                              /               \
+                    ----------------       -----------------
+                    |    class A   |       |    class B    |
+                    ----------------       -----------------
+                            \                      /
+                              \                   /
+                           ----------------------------
+                             |        Class C      |
+                           ----------------------------
+__________________________________________________________________________________________________________________________________
+
+
+                             -------------------
+                             |   class Object  |     (As A & B are interfaces, Object class is not connected with them)
+                             -------------------
+                         Not Connected with Interfaces              
+                                            
+                    ----------------       -----------------
+                    | Interface A   |       | Interface B  |
+                    ----------------       -----------------
+                            \                      /
+                              \                   /         (A & B properties are inherited to Class C without any Ambiguity)
+                           ----------------------------
+                             |        Class C      |
+                           ----------------------------
